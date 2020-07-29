@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 sendRequestResponse();
             }
         });
+        checkUserList();
 
     }
 
@@ -89,7 +90,10 @@ public class MainActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    private void fetchUserList(){
-
+    private void checkUserList(){
+        if (!userList.isEmpty())
+            Log.i(TAG,"User List is empty");
+        else
+            Log.i(TAG,"User List is empty");
     }
 }
