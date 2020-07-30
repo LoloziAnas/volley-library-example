@@ -69,11 +69,12 @@ public class MainActivity extends AppCompatActivity {
                         int id = jsonObject1.getInt("id");
                         String name = jsonObject1.getString("name");
                         String email = jsonObject1.getString("email");
+                        String gender = jsonObject1.getString("gender");
 
                         JSONObject jsonObject2 = jsonObject1.getJSONObject("contact");
                         String phone = jsonObject2.getString("mobile");
 
-                        user = new User(id,name,email,phone);
+                        user = new User(id,name,email,phone,gender);
                         userList.add(user);
                     }
                 } catch (JSONException e) {
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkUserList(){
         if (!userList.isEmpty())
-            Log.i(TAG,"User List is empty");
+            Log.i(TAG,"User List is not empty");
         else
             Log.i(TAG,"User List is empty");
     }

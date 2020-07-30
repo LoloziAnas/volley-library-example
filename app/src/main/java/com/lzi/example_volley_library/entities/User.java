@@ -1,16 +1,19 @@
 package com.lzi.example_volley_library.entities;
 
 public class User {
+
     private int id;
     private String name;
     private String email;
     private String phone;
+    private String gender;
 
-    public User(int id, String name, String email, String phone) {
+    public User(int id, String name, String email, String phone, String gender) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.gender = gender;
     }
 
     public int getId() {
@@ -43,5 +46,13 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }
