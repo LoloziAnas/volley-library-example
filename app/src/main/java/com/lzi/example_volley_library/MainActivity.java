@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         userList.add(new User(3,"Saad Ougaal","saad1@gmail.com","0645481200","male"));
         lvUsers.setAdapter(userAdapter);
 
-
+        // implement setOnClickListener event on send Button
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         userList.clear();
         userAdapter.notifyDataSetChanged();
 
-        requestQueue = Volley.newRequestQueue(this);
         stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -123,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        requestQueue.add(stringRequest);
+        MySingleton.getInstance(this).addToRequestQueue(stringRequest);
     }
 
     private void showPDialog(){
